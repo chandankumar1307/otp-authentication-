@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+  height: 500px;
+  background: white;
+  text-align: center;
+  border-radius: 5px;
+}
+h2 {
+  font-size: 40px;
+  font-family: sans-serif;
+}
+.itext {
+  display: block;
+  padding: 7px;
+  width: 220px;
+  margin: 10px 0px 0px 70px;
+}
+.gender {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+.submit {
+  display: block;
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  border-radius: 5px;
+  margin: 40px 0px 0px 130px;
+}
+.extra {
+  font-family: sans-serif;
+}

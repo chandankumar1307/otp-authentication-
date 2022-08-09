@@ -1,0 +1,39 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-otpauth-dev-171836-authRole",
+      "UnauthRoleArn": "arn:aws:iam::223023202248:role/amplify-otpauth-dev-171836-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::223023202248:role/amplify-otpauth-dev-171836-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-otpauth-dev-171836-deployment",
+      "UnauthRoleName": "amplify-otpauth-dev-171836-unauthRole",
+      "StackName": "amplify-otpauth-dev-171836",
+      "StackId": "arn:aws:cloudformation:ap-south-1:223023202248:stack/amplify-otpauth-dev-171836/b421e950-157d-11ed-8ef1-0a1621de353a",
+      "AmplifyAppId": "d1n55jdxn05w01",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-otpauth-dev-171836-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "test": {}
+      },
+      "function": {
+        "testCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-otpauth-dev-171836-deployment",
+          "s3Key": "amplify-builds/testCreateAuthChallenge-74554571364874515146-build.zip"
+        },
+        "testDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-otpauth-dev-171836-deployment",
+          "s3Key": "amplify-builds/testDefineAuthChallenge-4b394638505973592f33-build.zip"
+        },
+        "testPreSignup": {
+          "deploymentBucketName": "amplify-otpauth-dev-171836-deployment",
+          "s3Key": "amplify-builds/testPreSignup-4637373368706d397242-build.zip"
+        },
+        "testVerifyAuthChallengeResponse": {
+          "deploymentBucketName": "amplify-otpauth-dev-171836-deployment",
+          "s3Key": "amplify-builds/testVerifyAuthChallengeResponse-326f4654354d635a3563-build.zip"
+        }
+      }
+    }
+  }
+}
