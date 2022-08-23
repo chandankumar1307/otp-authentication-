@@ -10,6 +10,8 @@ import { FormControl } from 'react-bootstrap';
 import Amplify from "aws-amplify";
 import Auth from '@aws-amplify/auth'
 import awsconfig from './aws-exports';
+import Details from './Details';
+import { useNavigate } from 'react-router-dom';
 Amplify.configure(awsconfig);
 
 const NOTSIGNIN = 'You are NOT logged in';
@@ -18,14 +20,17 @@ const SIGNEDOUT = 'You have logged out successfully';
 const WAITINGFOROTP = 'Enter OTP number';
 const VERIFYNUMBER = 'Verifying number (Country code +XX needed)';
 function App() {
+  const navigate = useNavigate();
   const [message, setMessage] = useState('Welcome to Demo');
   const [user, setUser] = useState(null);
   const [session, setSession] = useState(null);
   const [otp, setOtp] = useState('');
   const [number, setNumber] = useState('');
   const password = Math.random().toString(10) + 'Abc#';
+
   useEffect(() => {
     verifyAuth();
+
   }, []);
   const verifyAuth = () => {
     Auth.currentAuthenticatedUser()
@@ -33,6 +38,7 @@ function App() {
         setUser(user);
         setMessage(SIGNEDIN);
         setSession(null);
+
       })
       .catch((err) => {
         console.error(err);
@@ -54,6 +60,7 @@ function App() {
     Auth.signIn(number)
       .then((result) => {
         setSession(result);
+        console.log(result);
         setMessage(WAITINGFOROTP);
       })
       .catch((e) => {
@@ -91,10 +98,17 @@ function App() {
         console.log(err);
       });
   };
+
+  const register = () => {
+    if (user) {
+      navigate('/details');
+    }
+  }
+
   return (
     <div className='App'>
       <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
+
         <p>{message}</p>
         {!user && !session && (
           <div>
@@ -133,10 +147,14 @@ function App() {
             <Button variant='outline-danger' onClick={signOut}>
               Sign Out
             </Button>
+            <Button onClick={register} >Register</Button>
           </ButtonGroup>
+
         </div>
       </header>
+
     </div>
+
   );
 }
 export default App;
